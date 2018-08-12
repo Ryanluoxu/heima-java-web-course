@@ -3,14 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <title>Register Page</title>
+
+<script type="text/javascript">
+	function changeImage(img){
+		img.src = img.src + "?" + new Date();
+	}
+</script>
+
 </head>
 <body>
 
-	<form action="">
+	<form action="/javaweb-heima/FormDataCollection">
 		Username: <input type="text" name="username"><br/>
 		Password: <input type="password" name="password"><br/>
+		Gender: 
+				<input type="radio" name="gender" value="male">M
+				<input type="radio" name="gender" value="female">F<br/>
+		
+		Location:
+				<select name="location">
+						<option value="Singapore">Singapore</option>
+						<option value="China">China</option>
+						<option value="America">America</option>
+				</select>
+				<br>
+		
+		Hobbies:
+				<input type="checkbox" name="hobbies" value="sing"> Sing
+				<input type="checkbox" name="hobbies" value="dance"> Dance
+				<input type="checkbox" name="hobbies" value="run"> Run
+				<br>
+		Introduction:
+				<textarea rows="6" cols="60" name="introduction"></textarea>
+				<br>
+		Photo:
+				<input type="file" name="photo"><br>
+				
+				<input type="hidden" name="id" value="00111">
+				
 		Verification Code: <input type="text" name="checkcode"><br/>
-		<img alt="Verification Code" src="/javaweb-heima/RandomImage">
+		<img alt="" src="/javaweb-heima/RandomImage" onclick="changeImage(this)">
+		<br>
+		<input type="submit" value="Submit">
 	</form>
 
 </body>
